@@ -1,4 +1,6 @@
 package Vehicle_Management_System;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * File Name: VehicleManager.java
@@ -16,5 +18,40 @@ package Vehicle_Management_System;
  */
 
 public class VehicleManager {
-
+	
+	//Singleton instance
+	private static VehicleManager instance;
+	
+	//Array List to store vehicles
+	private List<Vehicle> vehicles;
+	
+	
+	//private constructor so that it's secured from outside the class
+	private VehicleManager() {
+		//initialize the list of vehicles
+		vehicles = new ArrayList<>();
+	}
+	
+	//It's a method to get the singleton instance 
+	public static VehicleManager getInstance() {
+		
+		//if instance is NULL then create new one
+		if (instance==null) {
+			instance = new VehicleManager();
+			}
+		//return the singleton instance
+		return instance;
+	}
+	
+	//it's a method to add vehicle to the list 
+	public void addVehicle(Vehicle vehicle) {
+		//add vehicle to the list.
+		vehicles.add(vehicle);
+	}
+	
+	//Method to get vehicles in our stored array list
+	public List<Vehicle> getVehicles(){
+		//return the list of vehicles.
+		return vehicles;
+	}
 }

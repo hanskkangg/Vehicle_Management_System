@@ -13,6 +13,20 @@ package Vehicle_Management_System;
  * @since javaSE-17
  * @see VehicleManager.java, VehicleDirector.java,VehicleFactory.java
  */
-public class Vehicle {
+public interface Vehicle {
+	
+	//Common methods for all vehicles
+	void start();
+	void stop();
+	
+	//Common attributes for all vehicles
+	String getEngine();
+	void setEngine(String Engine);
 
+	int getWheels();
+	void setWheels(int Wheels);
+	
+	String getColor();
+	void setColor(String Color);
+	
 }
